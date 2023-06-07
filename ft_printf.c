@@ -6,42 +6,53 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:16:54 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/06/05 11:37:57 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/06/07 14:54:40 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int ft_printf(const char *format, )
+static size_t	ft_process(char specifier, va_list ap)
 {
-    va_list args;
-    va_start(args, format);
-    int c;
-    char *str;
+	size_t	pos;
 
-    while (*format)
-    {
-        if (*format == '%')
-        {
-            format++;
-            if (*format == 'c')
-            {
-                c = va_arg(args, int);
-                write(1, &c, 1);
-            }
-            else if (*format == 's')
-            {
-                *str = va_arg(args, char *);
-                write(1, str, strlen(str));
-            }
-            else if (*format == 'p')
-        }
-        else
-        {
+	pos = 0;
+	if (specifier == 'c')
+		pos = ft_wrt_char(va_arg(ap, int));
+	else if (specifier == 's')
+		pos = ft_wrt_str(va_arg(ap, char *));
+	else if (specifier == 'p')
+		pos = ft_wrt_base_ptr(va_arg(ap, void *), HEX_BASE_LOW, 1);
+	else if (specifier == 'd' || specifier == 'i')
+		pos = ft_wrt_base_nbr(va_arg(ap, int), DEC_BASE);
+	else if (specifier == 'u')
+		pos = ft_wrt_base_unsnbr(va_arg(ap, unsigned int), DEC_BASE);
+	else if (specifier == 'x')
+		pos = ft_wrt_base_unsnbr(va_arg(ap, unsigned int), HEX_BASE_LOW);
+	else if (specifier == 'X')
+		pos = ft_wrt_base_unsnbr(va_arg(ap, unsigned int), HEX_BASE_UP);
+	else if (specifier == '%')
+		pos = ft_wrt_char('%');
+	return (pos);
+}
 
-        }
-    format ++;
-    }
-    va_end(args);
-    return(NULL);
+int ft_printf(const char *format, ... )
+{
+	va_list	args;
+	size_t	pos;
+
+	va_start(args, format);
+	pos = 0;
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			pos += ft_process(*++format, args);
+			format++;
+		}
+		else
+		pos += ft_wrt_char(*format++);
+	}
+	va_end(args);
+	return(pos);
 }

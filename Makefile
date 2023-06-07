@@ -6,7 +6,7 @@
 #    By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 16:11:20 by hwiemann          #+#    #+#              #
-#    Updated: 2023/05/25 16:14:25 by hwiemann         ###   ########.fr        #
+#    Updated: 2023/06/07 14:41:08 by hwiemann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,19 +20,24 @@ CC = cc
 
 FLAG = -Werror -Wextra -Wall
 
-SRC =
-
+SRC = $(wildcard *.c)
 
 OBJ = $(SRC:%.c=%.o)
 
-all: $(NAME) 
+LIBFT = libft/libft.a
+
+all: $(NAME)
+
+$(LIBFT):
+	make -C libft
 
 $(NAME):$(OBJ)
 	$(AR) $(NAME) $(OBJ)
 %.o: %.c
 	$(CC) $(FLAG) -c $< -o $@
 clean:
-	$(RM) $(OBJ) 
+	$(RM) $(OBJ)
+	make clean -C libft
 fclean:clean
 	$(RM) $(NAME)
 re: fclean all
