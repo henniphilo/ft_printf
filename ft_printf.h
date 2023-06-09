@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:51:46 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/06/09 13:06:13 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:39:11 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # define HEX_BASE_UP "0123456789ABCDEF"
 # define HEX_BASE_LOW "0123456789abcdef"
 # define POINTER_PREFIX "0x"
+# define NULL_DISPLAY "(null)"
+# define NIL_DISPLAY "(nil)"
 
 int		ft_printf(const char *format, ...);
 size_t	ft_wrt_char(int c);
