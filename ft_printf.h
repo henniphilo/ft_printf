@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:51:46 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/06/07 14:41:46 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:07:47 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef    PRINTF_H
-# define    PRINTF_H
+#ifndef    FT_PRINTF_H
+# define    FT_PRINTF_H
 
 # include "./libft/libft.h"
 # include <unistd.h>

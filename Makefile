@@ -6,7 +6,7 @@
 #    By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/25 16:11:20 by hwiemann          #+#    #+#              #
-#    Updated: 2023/06/07 14:41:08 by hwiemann         ###   ########.fr        #
+#    Updated: 2023/06/07 15:03:41 by hwiemann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ AR = ar rc
 
 RM = rm -fr
 
-CC = cc 
+CC = cc
 
 FLAG = -Werror -Wextra -Wall
 

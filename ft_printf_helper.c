@@ -6,11 +6,11 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:33:27 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/06/07 14:50:00 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:03:32 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	ft_wrt_char(int c)
 {
