@@ -36,7 +36,7 @@ static size_t	ft_process(char specifier, va_list ap)
 	return (pos);
 }
 
-int ft_printf(const char *format, ... )
+int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	size_t	pos;
@@ -51,8 +51,8 @@ int ft_printf(const char *format, ... )
 			format++;
 		}
 		else
-		pos += ft_wrt_char(*format++);
+			pos += ft_wrt_char(*format++);
 	}
 	va_end(args);
-	return(pos);
+	return (pos);
 }

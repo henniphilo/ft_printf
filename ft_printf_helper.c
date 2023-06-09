@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:33:27 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/06/07 15:03:32 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/06/09 13:02:09 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 size_t	ft_wrt_char(int c)
 {
 	write(1, &c, 1);
-	return(1);
+	return (1);
 }
 
-size_t ft_wrt_str(char *s)
+size_t	ft_wrt_str(char *s)
 {
 	size_t	i;
 
 	if (s == NULL)
-	return (0);
+		return (0);
 	i = 0;
 	while (*s)
 	{
@@ -33,11 +33,11 @@ size_t ft_wrt_str(char *s)
 	return (i);
 }
 
-size_t ft_wrt_base_ptr(void *ptr, char *base, int first_flag)
+size_t	ft_wrt_base_ptr(void *ptr, char *base, int first_flag)
 {
 	unsigned long long	nbr;
-	size_t	base_len;
-	size_t	i;
+	size_t				base_len;
+	size_t				i;
 
 	nbr = (unsigned long long)ptr;
 	base_len = ft_strlen(base);
@@ -56,7 +56,7 @@ size_t ft_wrt_base_ptr(void *ptr, char *base, int first_flag)
 	return (i);
 }
 
-size_t ft_wrt_base_nbr(int nbr, char *base)
+size_t	ft_wrt_base_nbr(int nbr, char *base)
 {
 	int		base_len;
 	long	lnbr;
@@ -78,11 +78,11 @@ size_t ft_wrt_base_nbr(int nbr, char *base)
 	return (i);
 }
 
-size_t ft_wrt_base_unsnbr(unsigned int nbr, char *base)
+size_t	ft_wrt_base_unsnbr(unsigned int nbr, char *base)
 {
-	unsigned int	base_len;
+	unsigned int		base_len;
 	unsigned long long	lnbr;
-	size_t		i;
+	size_t				i;
 
 	base_len = ft_strlen(base);
 	lnbr = nbr;

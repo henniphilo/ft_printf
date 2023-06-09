@@ -31,8 +31,10 @@ all: $(NAME)
 $(LIBFT):
 	make -C libft
 
-$(NAME):$(OBJ)
-	$(AR) $(NAME) $(OBJ)
+$(NAME):$(LIBFT) $(OBJ)
+	cp $(LIBFT) $(NAME)
+	$(AR) $(NAME) $(OBJ) 
+	
 %.o: %.c
 	$(CC) $(FLAG) -c $< -o $@
 clean:
